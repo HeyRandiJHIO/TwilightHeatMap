@@ -1,2 +1,12 @@
 [build]
+  # we’re serving straight from the repo root
   publish = "/"
+
+# any request should return index.html (so Netlify doesn’t try to serve a folder listing or raw text)
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200
+
+
+
